@@ -135,6 +135,8 @@ class TravelHome extends StatelessWidget {
                   ),
 
                   child: GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: 190, // max tile width
                       mainAxisExtent: 120, // fixed tile height
@@ -201,6 +203,8 @@ class TravelHome extends StatelessWidget {
                   height: 600,
 
                   child: ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       final trendingCities = trendingList[index];
