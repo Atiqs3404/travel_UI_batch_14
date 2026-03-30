@@ -7,6 +7,7 @@ class TravelHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Destination Option Demo List
     List<Map<String, String>> destinationList = [
       {
         "img":
@@ -30,6 +31,7 @@ class TravelHome extends StatelessWidget {
       },
     ];
 
+    // Trending Option Demo List
     List<Map<String, String>> trendingList = [
       {
         "img":
@@ -123,7 +125,7 @@ class TravelHome extends StatelessWidget {
 
               // Destination Images
               SizedBox(
-                height: 270,
+                height: 280,
                 width: double.infinity,
 
                 child: Padding(
@@ -196,40 +198,23 @@ class TravelHome extends StatelessWidget {
                   vertical: 10,
                 ),
                 child: SizedBox(
-                  height: 300,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Column(
-                      children: [
-                        Trending_Card(
-                          img:
-                              "https://images.unsplash.com/photo-1699726258869-36dff6247fd3?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                          title: "Romantic Paris Gateway",
-                          price: "\$799",
-                        ),
-                        SizedBox(height: 5),
-                        Trending_Card(
-                          img:
-                              "https://images.unsplash.com/photo-1699726258869-36dff6247fd3?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                          title: "Romantic Paris Gateway",
-                          price: "\$799",
-                        ),
-                        SizedBox(height: 5),
-                        Trending_Card(
-                          img:
-                              "https://images.unsplash.com/photo-1699726258869-36dff6247fd3?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                          title: "Romantic Paris Gateway",
-                          price: "\$799",
-                        ),
-                        SizedBox(height: 5),
-                        Trending_Card(
-                          img:
-                              "https://images.unsplash.com/photo-1699726258869-36dff6247fd3?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                          title: "Romantic Paris Gateway",
-                          price: "\$799",
-                        ),
-                      ],
-                    ),
+                  height: 600,
+
+                  child: ListView.builder(
+                    itemCount: 4,
+                    itemBuilder: (context, index) {
+                      final trendingCities = trendingList[index];
+                      return Column(
+                        children: [
+                          Trending_Card(
+                            img: trendingCities["img"]!,
+                            title: trendingCities["title"]!,
+                            price: trendingCities["price"]!,
+                          ),
+                          SizedBox(height: 10),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ),
