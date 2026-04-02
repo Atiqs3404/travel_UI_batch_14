@@ -143,7 +143,7 @@ class TravelHome extends StatelessWidget {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                     ),
-                    itemCount: 4,
+                    itemCount: destinationList.length,
                     itemBuilder: (context, index) {
                       final city = destinationList[index];
 
@@ -205,7 +205,7 @@ class TravelHome extends StatelessWidget {
                   child: ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
 
-                    itemCount: 4,
+                    itemCount: trendingList.length,
                     itemBuilder: (context, index) {
                       final trendingCities = trendingList[index];
                       return Column(
